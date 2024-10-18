@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Estoque de Produtos</h1>
+        <nav>
+            <a href="{{ url_for('adicionar_produto') }}">Adicionar Produto</a>
+            <a href="{{ url_for('criar_usuario') }}">Cadastrar Usuário</a> >
+            <a href="{{ url_for('logout') }}">Sair</a>
+        </nav>
+    </header>
+    <div class="container">
+        <ul>
+            {% for produto in produtos %}
+                <li>
+                    {{ produto['nome'] }}: {{ produto['quantidade'] }} unidades a R${{ produto['preco'] }} cada
+                    - Valor total: R$ {{ produto['valor_total'] }}
+                    <a href="{{ url_for('atualizar_produto', id=produto['id']) }}">Atualizar</a>
+                    <a href="{{ url_for('remover_produto', id=produto['id']) }}">Remover</a>
+                </li>
+            {% else %}
+                <li>O estoque está vazio.</li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 Diloco's variedades</p>
+    </footer>
+</body>
+</html>
