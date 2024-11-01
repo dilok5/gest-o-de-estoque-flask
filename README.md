@@ -1,8 +1,23 @@
-# pytest cache directory #
+# Sistema de Gestão de Estoque #
 
-This directory contains data from the pytest's cache plugin,
-which provides the `--lf` and `--ff` options, as well as the `cache` fixture.
+Este projeto é uma aplicação web desenvolvida com Flask e MySQL para gerenciar o estoque de uma empresa. Ele permite que os usuários acompanhem e manipulem o inventário, controlando a adição, atualização e exclusão de produtos. A plataforma inclui:
 
-**Do not** commit this to version control.
+Autenticação de Usuário: Login seguro com controle de acesso para usuários e administradores.
+Gestão de Produtos: Adicionar, atualizar quantidade e remover produtos.
+Controle de Acesso: Usuários comuns podem adicionar e consultar produtos, enquanto a exclusão é restrita a administradores.
 
-See [the docs](https://docs.pytest.org/en/stable/how-to/cache.html) for more information.
+# Requisitos #
+Python 3.11
+Flask
+PyMySQL
+MySQL Server
+
+# Configuração #
+Instale as dependências.
+Configure as credenciais do banco de dados em db_config.
+Execute app.py para iniciar a aplicação.
+
+
+
+
+
